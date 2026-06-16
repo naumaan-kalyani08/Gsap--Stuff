@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cascadeStart = clipPath80PercentTime;
 
-    const cascadeStagger = 0.10;
-    const cascadeDuration = 0.12;
+    const cascadeStagger = 0.16;
+    const cascadeDuration = 0.20;
 
     heroImages.forEach((heroImage, index) => {
         heroScrollTimeline.to(heroImage, {
@@ -92,12 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
     heroScrollTimeline.to(".hero-outro-left", {
         xPercent: -100,
         duration: 0.55,
-        ease: "power2.inOut"
+        // ease: "power2.inOut"
     }, fadeOutStart);
 
     heroScrollTimeline.to(".hero-outro-right", {
         xPercent: 100,
         duration: 0.55,
-        ease: "power2.inOut"
+        // ease: "power2.inOut"
     }, fadeOutStart);
 });
