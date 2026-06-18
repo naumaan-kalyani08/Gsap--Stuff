@@ -41,7 +41,7 @@ p{
     z-index: 2;
 }
 .hero-bg img{
-    filter: brightness(0.5);
+        filter: brightness(0.5);
 }
 .hero-bg,
 .hero-content,
@@ -52,8 +52,7 @@ p{
     left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    transform: translateZ(0);
+    will-change: transform;
 }
 .hero-img,
 .hero-outro-content{
@@ -90,49 +89,7 @@ p{
 }
 .hero-img{
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-    will-change: clip-path;
-}
-body.low-power-mode .hero-bg img{
-    filter: none;
-}
-body.low-power-mode .hero-revealer,
-body.low-power-mode .hero-outro-left,
-body.low-power-mode .hero-outro-right{
-    display: none;
-}
-body.low-power-mode .hero-img{
-    clip-path: none;
-    will-change: auto;
-}
-body.low-power-mode .hero-bg,
-body.low-power-mode .hero-content,
-body.low-power-mode .hero-images,
-body.low-power-mode .hero-img,
-body.low-power-mode .hero-outro-content{
-    will-change: auto;
-}
-body.low-power-mode .day-image,
-body.low-power-mode .day-number{
-    box-shadow: none;
-}
-@media (prefers-reduced-motion: reduce){
-    .hero-bg img{
-        filter: none;
-    }
-    .hero-revealer,
-    .hero-outro-left,
-    .hero-outro-right{
-        display: none;
-    }
-    .hero-img{
-        clip-path: none;
-        will-change: auto;
-    }
-    .day-image img,
-    .day:hover .day-image img{
-        transition: none;
-        transform: none;
-    }
+    will-change:clip-path;
 }
 .about{
  position: relative;   
