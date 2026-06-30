@@ -1,0 +1,284 @@
+:root {
+  --base-100: #f0f0e6;
+  --base-200: #0e3c3a;
+  --base-300: #0f0f0f;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--base-100);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1,
+h3,
+p {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+}
+
+h1 {
+  font-size: clamp(3rem, 4vw, 5rem);
+}
+
+h3 {
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.landing-page {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-bg img {
+  filter: brightness(0.5);
+}
+
+.hero-bg,
+.hero-content,
+.hero-revealer,
+.hero-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.hero-img,
+.hero-outro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0);
+  will-change: transform;
+}
+
+.hero-content,
+.hero-outro-content {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--base-100);
+}
+
+.hero-content h1,
+.hero-outro-content h1 {
+  width: 65%;
+}
+
+.hero-outro-content {
+  background-color: var(--base-200);
+}
+
+.hero-bg {
+  transform: scale(1.5);
+}
+
+.hero-revealer {
+  background-color: var(--base-200);
+  clip-path: polygon(49.5% 50%, 50.5% 50%, 50.5% 50%, 49.5% 50%);
+}
+
+.hero-img {
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  will-change: clip-path;
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  padding: 2rem;
+  background-color: var(--base-100);
+  color: var(--base-300);
+  margin-top: 500svh;
+  z-index: 1;
+}
+
+.about-content {
+  width: 40%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .hero-content h1,
+  .hero-outro-content h1,
+  .about-content {
+    width: 100%;
+  }
+}
+
+.itinerary {
+  padding: 120px 5%;
+  background-color: var(--base-100);
+  color: var(--base-300);
+  position: relative;
+}
+
+.itinerary-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--base-200);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 80px;
+  color: #555;
+  font-weight: 400;
+}
+
+.itinerary-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 38px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--base-200), #a8c4c2);
+  z-index: 0;
+}
+
+.day {
+  position: relative;
+  margin-bottom: 100px;
+  padding-left: 90px;
+  z-index: 1;
+}
+
+.day:last-child {
+  margin-bottom: 0;
+}
+
+.day-image {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.day-image img {
+  transition: transform 0.6s ease;
+}
+
+.day:hover .day-image img {
+  transform: scale(1.06);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.day-number {
+  width: 76px;
+  height: 76px;
+  background: var(--base-200);
+  color: var(--base-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(14, 60, 58, 0.25);
+}
+
+.day h4 {
+  font-size: 1.85rem;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.day-date {
+  display: block;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+.activities {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.activities li {
+  margin-bottom: 14px;
+  padding-left: 4px;
+  font-size: 1.05rem;
+}
+
+.activities li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .itinerary {
+    padding: 80px 5%;
+  }
+
+  .day {
+    padding-left: 70px;
+  }
+
+  .day-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
